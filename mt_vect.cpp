@@ -14,7 +14,7 @@ int main()
 {
   int sum=0;
   const int size_array = 10000;
-  const int num_threads = 2; 
+  const int num_threads = 5; 
   std::vector<std::thread> my_threads;
   std::vector<int> partial_sums(num_threads);
   int array[size_array];
@@ -36,6 +36,13 @@ int main()
       t.join();
     }
   }
+
+  
+  for (int i = 0; i <num_threads; i++) {
+   std::cout<<"Partial sum "<< i << "  "<< partial_sums[i]<< std::endl;
+  }
+
+
  std::cout << "Sum using threads = " << std::accumulate(partial_sums.begin(), partial_sums.end(), 0) << std::endl; 
 
   return 0;
