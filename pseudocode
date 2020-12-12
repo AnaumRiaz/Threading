@@ -1,0 +1,12 @@
+for server:
+
+create a socket:
+-int descriptor, AF_INET(address family), sock_stream(tcp), 0(default values)
+
+bind the address to the socket
+-we need sockaddr_in struct to tell the address in bind
+-this sockaddr_in will define sin_family(AF_INET), sin_addr.s_addr(ANY ip of your pc=INADDR_ANY) and sin_port = htons( 8888 ). htons will convert from host byte order to network byte order.
+
+
+connect
+-we need sockaddr_in struct to tell the address in connect
